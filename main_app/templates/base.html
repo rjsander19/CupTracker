@@ -1,4 +1,4 @@
-{% load static %}
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,7 +10,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </head>
   <body>
     <header class="navbar-fixed">
@@ -23,7 +25,8 @@
           </ul>
           <ul class="right">
             <li><a href="/about">About</a></li>
-            <li><a href="/cups">View All My Cups</a></li>
+            <li><a href="{% url 'cups_create' %}">Add a Cup</a></li>
+            <li><a href="{% url 'index' %}">View All My Cups</a></li>
           </ul>
         </div>
       </nav>
