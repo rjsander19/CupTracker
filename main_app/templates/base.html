@@ -15,17 +15,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </head>
   <body>
-    <header class="navbar-fixed">
+    <header class="navbar-fixed teal lighten-2">
       <nav>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper teal lighten-2">
           <ul>
             <li>
-              <a href="/" class="left brand-logo">  CupCollector</a>
+              <a href="/" class="left brand-logo  teal lighten-2">  CupCollector</a>
             </li>
           </ul>
-          <ul class="right">
+          <ul class="right teal lighten-2">
             <li><a href="/about">About</a></li>
-            
+
             {% if user.is_authenticated %}
             <li><a href="{% url 'contents_create' %}">Add a Content</a></li>
             <li><a href="{% url 'contents_index' %}">View All Contents</a></li>
@@ -41,8 +41,8 @@
       </nav>
     </header>
     <main class="container">{% block content %} {% endblock %}</main>
-    <footer class="page-footer">
-      <div class="right">
+    <footer class="page-footer teal lighten-2">
+      <div class="right teal lighten-2">
         All Rights Reserved, © 2023 Cup Collector  
       </div>
     </footer>

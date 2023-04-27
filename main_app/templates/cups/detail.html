@@ -19,7 +19,7 @@
   <div class="col s6">
     <form action="{% url 'add_use' cup.id %}" method="post">
         {% csrf_token %} {{ use_form.as_p }}
-        <input type="submit" class="btn" value="Add Use" />
+        <input type="submit" class="btn #212121 grey darken-4" value="Add Use" />
       </form>
     <table class="striped">
       <thead>
