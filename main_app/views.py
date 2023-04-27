@@ -32,7 +32,7 @@ from django.shortcuts import render, redirect
 
 #Home View
 def home(request):
-  return HttpResponse('<h1>Hello /ᐠ｡‸｡ᐟ\ﾉ</h1>')
+  return HttpResponse('<h1>Welcome to Cup Collector! </h1>')
 
 #About View
 def about(request):
