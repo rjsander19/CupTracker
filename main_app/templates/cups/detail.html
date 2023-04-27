@@ -9,11 +9,6 @@
       <div class="card-content">
         <span class="card-title">{{ cup.name }}</span>
         <p>Description: {{ cup.description }}</p>
-        <!-- {% if cup.age > 0 %}
-        <p>Age: {{ cup.age }}</p>
-        {% else %}
-        <p>Age: Kitten</p>
-        {% endif %} -->
       </div>
       <div class="card-action">
         <a href="{% url 'cups_update' cup.id %}">Edit</a>
@@ -44,6 +39,49 @@
     </table>
   </div>
 </div>
+
+
+<hr />
+<div class="row">
+  <div class="col s6">
+    <h3>{{ cup.name }}'s Contents</h3>
+    {% if cup.contents.count %} {% for content in cup.contents.all %}
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">
+          A <span style="temp: {{ content.temp }}">{{ content.temp }}</span> {{ content.name }}
+        </span>
+      </div>
+    </div>
+    {% endfor %} {% else %}
+    <h5>No Contents :(</h5>
+    {% endif %}
+  </div>
+  <div class="col s6">
+    <h3>Available Contents</h3>
+    {% if contents.count %}
+      {% for content in contents.all %}
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">
+              A <span style="temp: {{ content.temp }}"> {{ content.temp }}</span> {{ content.name }}
+            </span>
+          </div>
+        </div>
+          <div class="card-action">
+            <form action="{% url 'assoc_content' cup.id content.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn">Add</button>
+            </form>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <h5>{{cup.name}} Already Has All Contents Available</h5>
+    {% endif %}
+  </div>
+
+
 
 <script>
   var dateEl = document.getElementById('id_date');

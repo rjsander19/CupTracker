@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Content Details</h1>
+
+<div class="card">
+    <a href="{% url 'contents_detail' content.id %}">
+        <div class="card-content">
+            <span class="card-title">A <span class="{{content.temp.lower}}-text">{{ content.temp.capitalize }}</span>
+                {{ content.name }}</span>
+        </div>
+    </a>
+    <div class="card-action">
+        <a href="{% url 'contents_update' content.id %}">Edit</a>
+        <a href="{% url 'contents_delete' content.id %}">Delete</a>
+    </div>
+</div>
+
+{% endblock %}
